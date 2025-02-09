@@ -5,6 +5,7 @@ Bu repo LaneATT modelinin bizim kullanımımıza göre şekillendirilmiş formud
 * Düzgün bir şekilde pytorch ve onunla uyumlu CUDA sürümünü kurmanız gerekiyor. 
 * requirements.txt'de belirtilen kütüphaneleri indirmeniz gerekiyor.
 * nms build'i yapmanız gerekiyor.
+* Experiments kalsörünü indirmeniz ve gerekli yere koymanız gerekiyor. Orijinal repoda linki var. (1.8gb)
 * **Orijinal repo'daki readme'de detaylı şekilde kurulum anlatılmış**
 
 ## Test
@@ -15,3 +16,4 @@ ika: Ben linux sistemde anaconda'ya python 3.11.11 kurup içine CUDA 12.4 ve pyt
   <br>* Ya da fotoğraf çekme kısmını yoruma alıp kendiniz fotoğrafı değiştirmelisiniz.
 
 * Test_run.py'deki yorumu okuyun.
+* 
