@@ -24,6 +24,8 @@ class LaneEval(object):
     def line_accuracy(pred, gt, thresh):
         pred = np.array([p if p >= 0 else -100 for p in pred])
         gt = np.array([g if g >= 0 else -100 for g in gt])
+        if len(gt) == 0:  # Handle empty ground truth
+            return 0.0
         return np.sum(np.where(np.abs(pred - gt) < thresh, 1., 0.)) / len(gt)
 
     @staticmethod

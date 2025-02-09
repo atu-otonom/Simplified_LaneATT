@@ -71,9 +71,7 @@ class LaneDataset(Dataset):
         return self.dataset.annotations
 
     def transform_annotations(self):
-        self.logger.info("Transforming annotations to the model's target format...")
         self.dataset.annotations = np.array(list(map(self.transform_annotation, self.dataset.annotations)))
-        self.logger.info('Done.')
 
     def filter_lane(self, lane):
         assert lane[-1][1] <= lane[0][1]

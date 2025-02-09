@@ -128,8 +128,8 @@ class Experiment:
 
     def eval_end_callback(self, dataset, predictions, epoch_evaluated):
         metrics = self.save_epoch_results(dataset, predictions, epoch_evaluated)
-        self.logger.debug('Testing session finished on model after epoch %d.', epoch_evaluated)
-        self.logger.info('Results:\n %s', str(metrics))
+        #self.logger.debug('Testing session finished on model after epoch %d.', epoch_evaluated)
+        #self.logger.info('Results:\n %s', str(metrics))
 
     def save_epoch_results(self, dataset, predictions, epoch):
         # setup dirs

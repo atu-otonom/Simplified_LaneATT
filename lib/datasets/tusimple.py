@@ -22,19 +22,16 @@ class TuSimple(LaneDatasetLoader):
         self.split = split
         self.root = root
         self.logger = logging.getLogger(__name__)
-
         if split not in SPLIT_FILES.keys():
             raise Exception('Split `{}` does not exist.'.format(split))
 
         self.anno_files = [os.path.join(self.root, path) for path in SPLIT_FILES[split]]
-
         if root is None:
             raise Exception('Please specify the root directory')
 
         self.img_w, self.img_h = 1280, 720
         self.annotations = []
         self.load_annotations()
-
         # Force max_lanes, used when evaluating testing with models trained on other datasets
         if max_lanes is not None:
             self.max_lanes = max_lanes
@@ -65,7 +62,6 @@ class TuSimple(LaneDatasetLoader):
         return lanes
 
     def load_annotations(self):
-        self.logger.info('Loading TuSimple annotations...')
         self.annotations = []
         max_lanes = 0
         for anno_file in self.anno_files:
@@ -90,8 +86,6 @@ class TuSimple(LaneDatasetLoader):
         if self.split == 'train':
             random.shuffle(self.annotations)
         self.max_lanes = max_lanes
-        self.logger.info('%d annotations loaded, with a maximum of %d lanes in an image.', len(self.annotations),
-                         self.max_lanes)
 
     def transform_annotations(self, transform):
         self.annotations = list(map(transform, self.annotations))
