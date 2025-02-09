@@ -16,4 +16,4 @@ ika: Ben linux sistemde anaconda'ya python 3.11.11 kurup içine CUDA 12.4 ve pyt
   <br>* Ya da fotoğraf çekme kısmını yoruma alıp kendiniz fotoğrafı değiştirmelisiniz.
 
 * Test_run.py'deki yorumu okuyun.
-* 
+
